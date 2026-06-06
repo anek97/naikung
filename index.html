@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="Nei Kung">
+<meta name="theme-color" content="#080808">
+<meta name="description" content="The Sovereign Cultivation Manual — Nei Kung internal energy system">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<title>Nei Kung · 內功</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<canvas id="particles"></canvas>
+
+<!-- HOME SCREEN -->
+<div id="screen-home" class="screen active">
+  <div class="home-header">
+    <div class="eyebrow">The Sovereign Cultivation Manual</div>
+    <h1>NEI KUNG</h1>
+    <div class="chinese-main">內功</div>
+    <p>The complete sequential manual for unclogging, cultivating, and passing each gate — from Earth root to Heaven crown.</p>
+    <button class="toggle-btn" onclick="toggleDaily()">↓ Daily Practice Sequence</button>
+    <div id="daily-panel" class="daily-panel">
+      <div class="panel-eyebrow">The 45-Minute Daily Architecture</div>
+      <div id="daily-items"></div>
+    </div>
+  </div>
+
+  <div class="levels-list">
+    <div class="list-eyebrow">Select a Gate to Enter</div>
+    <div class="spine-line"></div>
+    <div id="level-list"></div>
+  </div>
+
+  <div class="home-footer">
+    <div class="footer-top">The Work Is The Way</div>
+    <div class="footer-bottom">You are not becoming something new. You are becoming what you actually are — fully, finally, without apology.</div>
+  </div>
+</div>
+
+<!-- DETAIL SCREEN -->
+<div id="screen-detail" class="screen">
+  <div class="detail-header" id="detail-header">
+    <button class="back-btn" onclick="goHome()">←</button>
+    <div class="detail-eyebrow" id="d-eyebrow"></div>
+    <div class="detail-title" id="d-title"></div>
+    <div class="detail-chinese" id="d-chinese"></div>
+    <div class="detail-subtitle" id="d-subtitle"></div>
+    <div class="detail-location" id="d-location"></div>
+  </div>
+  <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+  <div class="tabs" id="tabs">
+    <button class="tab-btn active" data-tab="unclog" onclick="switchTab('unclog',this)">Unclog</button>
+    <button class="tab-btn" data-tab="cultivate" onclick="switchTab('cultivate',this)">Cultivate</button>
+    <button class="tab-btn" data-tab="sensations" onclick="switchTab('sensations',this)">Sensations</button>
+    <button class="tab-btn" data-tab="passing" onclick="switchTab('passing',this)">Passing</button>
+  </div>
+  <div id="tab-unclog"    class="tab-content active"></div>
+  <div id="tab-cultivate" class="tab-content"></div>
+  <div id="tab-sensations"class="tab-content"></div>
+  <div id="tab-passing"   class="tab-content"></div>
+</div>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
